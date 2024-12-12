@@ -37,7 +37,7 @@ module.exports = {
       }
     } catch (e) {
       logFn("error", __filename, `${MODULE_NAME} :: ${FUNC_NAME} :: `, e);
-      if (e?.response?.statusCode === 404) {
+      if (e?.statusCode === 404) {
         response = Object.create(constants.serverResponses.dataNotFound);
       } else {
         response = Object.create(constants.serverResponses.serverError);
