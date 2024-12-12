@@ -17,10 +17,10 @@ router.use(function (req, res, next) {
     "Access-Control-Allow-Headers",
     "x-access-token, Origin, Content-Type, Accept"
   );
+  console.log("req",JSON.stringify(req))
   next();
 });
 
-console.log("req",JSON.stringify(req))
 router.post(
   "/getIdDetails",
   apiValidation.validateAPIkey,
