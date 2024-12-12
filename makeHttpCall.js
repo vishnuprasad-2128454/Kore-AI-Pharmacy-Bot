@@ -22,6 +22,7 @@ async function makeHttpCall(method, url, data = null, headers = {}) {
     });
     return response;
   } catch (error) {
+    console.log("error",error)
     throw error;
   }
 }
