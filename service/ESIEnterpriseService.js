@@ -15,9 +15,11 @@ module.exports = {
     let url = `${process.env.ESI_ORDER_ID_RESPONSE_URL}=${orderId}`;
     return await makeHttpCall("get", url)
       .then(function (res) {
+        console.log("res",res)
         return res.data;
       })
       .catch(function (err) {
+        console.log("err",err)
         return err;
       });
       

@@ -22,7 +22,7 @@ module.exports = {
   async getIdDetails(req, res) {
     const FUNC_NAME = `getIdDetails`;
     let response;
-
+    console.log("req.body",req.body)
     try {
       if (req.body.orderId && !req.body.memberId) {
         response = Object.create(constants.serverResponses.success);
