@@ -20,6 +20,7 @@ router.use(function (req, res, next) {
   next();
 });
 
+console.log("req",JSON.stringify(req))
 router.post(
   "/getIdDetails",
   apiValidation.validateAPIkey,
