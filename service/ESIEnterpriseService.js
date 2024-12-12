@@ -13,7 +13,7 @@ module.exports = {
    */
   async getOrderDetails(orderId) {
     let url = `${process.env.ESI_ORDER_ID_RESPONSE_URL}=${orderId}`;
-    makeHttpCall("get", url, null, requestHeaders)
+    return makeHttpCall("get", url, null, requestHeaders)
       .then(function (res) {
         return res.data;
       })
@@ -30,7 +30,7 @@ module.exports = {
 
   async getMemberDetails(memberId) {
     let url = `${process.env.ESI_MEMBER_ID_RESPONSE_URL}=${memberId}`
-    makeHttpCall("get", url, null, requestHeaders)
+    return makeHttpCall("get", url, null, requestHeaders)
       .then(function (res) {
         return res.data;
       })
