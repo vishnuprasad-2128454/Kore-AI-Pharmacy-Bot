@@ -68,7 +68,7 @@ module.exports = {
     return callback(null, data);
   },
   on_alert: function (requestId, data, callback) {
-    console.log("on_alert -->  : ", data, data.message);
+    console.log("on_alert -->  : ", data.message);
     return sdk.sendAlertMessage(data, callback);
   },
 };
