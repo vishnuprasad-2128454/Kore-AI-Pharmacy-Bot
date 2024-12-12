@@ -20,7 +20,7 @@ module.exports = {
     // Custom Bot Responses Condition
     if (responseId.startsWith("ESI_PHA_ORD_INFO")) {
       switch (responseId) {
-        case "ESI_PHA_ORD_INFO_ORD_ID_RESP":
+        case constants.botConversationUniqId.orderIdResponse:
           orderIdInput = entityStatus;
           let str = resultCopy[0].WEB_RESPONSE_MSG.replaceAll(
             "${order_status}",
@@ -29,7 +29,7 @@ module.exports = {
           resultCopy[0].WEB_RESPONSE_MSG = str;
           return msgTemplate(resultCopy);
 
-        case "ESI_PHA_ORD_INFO_MEMBER_ID_RESP":
+        case constants.botConversationUniqId.memberIdResponse:
           let memberIdInput = entityStatus;
           let memberStr = resultCopy[0].WEB_RESPONSE_MSG.replaceAll(
             "${member_status}",
@@ -38,7 +38,7 @@ module.exports = {
           resultCopy[0].WEB_RESPONSE_MSG = memberStr;
           return msgTemplate(resultCopy);
 
-        case "ESI_PHA_ORD_INFO_INVALID_MSG":
+        case constants.botConversationUniqId.invalidResponse:
           if (failedEntity !== null) {
             let failedEntityInputStr = resultCopy[0].WEB_RESPONSE_MSG.replaceAll(
               "${dynamic_entity}",

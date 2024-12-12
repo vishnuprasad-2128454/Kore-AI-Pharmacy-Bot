@@ -3,10 +3,15 @@ const verbiage_En_RespData = [];
 const verbiage_Fr_RespData = [];
 
 module.exports = {
-  excelResponse: {
+  botConversationResponse: {
     verbiageRespData: verbiageRespData,
     verbiage_En_RespData: verbiage_En_RespData,
     verbiage_Fr_RespData: verbiage_Fr_RespData,
+  },
+  botConversationUniqId:{
+    orderIdResponse:ESI_PHA_ORD_INFO_ORD_ID_RESP,
+    memberIdResponse:ESI_PHA_ORD_INFO_MEMBER_ID_RESP,
+    invalidResponse:ESI_PHA_ORD_INFO_INVALID_MSG
   },
   serverResponses: {
     default: {
