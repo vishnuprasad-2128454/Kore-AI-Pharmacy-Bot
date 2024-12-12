@@ -20,7 +20,7 @@ router.use(function (req, res, next) {
   next();
 });
 
-router.post(
+router.get(
   "/getIdDetails",
   apiValidation.validateAPIkey,
   ESIEnterpriseServiceController.getIdDetails

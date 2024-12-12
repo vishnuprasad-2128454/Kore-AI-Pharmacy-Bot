@@ -12,10 +12,8 @@ module.exports = {
    * @returns the id details.
    */
   async getOrderDetails(orderId) {
-    let data = { query: orderId };
-    let url = process.env.ESI_ORDER_ID_RESPONSE_URL;
-    let orderIdQueryParamData = qs.stringify(data);
-    makeHttpCalleHttpCall("post", url, orderIdQueryParamData, requestHeaders)
+    let url = `${process.env.ESI_ORDER_ID_RESPONSE_URL}=${orderId}`;
+    makeHttpCall("get", url, null, requestHeaders)
       .then(function (res) {
         return res.data;
       })
@@ -31,10 +29,8 @@ module.exports = {
    */
 
   async getMemberDetails(memberId) {
-    let data = { query: memberId };
-    let url = process.env.ESI_MEMBER_ID_RESPONSE_URL;
-    let memberIdQueryParamData = qs.stringify(data);
-    makeHttpCall("post", url, memberIdQueryParamData, requestHeaders)
+    let url = `${process.env.ESI_MEMBER_ID_RESPONSE_URL}=${memberId}`
+    makeHttpCall("get", url, null, requestHeaders)
       .then(function (res) {
         return res.data;
       })
