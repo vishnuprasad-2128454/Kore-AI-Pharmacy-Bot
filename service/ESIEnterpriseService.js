@@ -13,13 +13,14 @@ module.exports = {
    */
   async getOrderDetails(orderId) {
     let url = `${process.env.ESI_ORDER_ID_RESPONSE_URL}=${orderId}`;
-    return makeHttpCall("get", url, null, requestHeaders)
+    return await makeHttpCall("get", url, null, requestHeaders)
       .then(function (res) {
         return res.data;
       })
       .catch(function (err) {
         return err;
       });
+      
   },
 
   /**
@@ -30,7 +31,7 @@ module.exports = {
 
   async getMemberDetails(memberId) {
     let url = `${process.env.ESI_MEMBER_ID_RESPONSE_URL}=${memberId}`
-    return makeHttpCall("get", url, null, requestHeaders)
+    return await makeHttpCall("get", url, null, requestHeaders)
       .then(function (res) {
         return res.data;
       })
