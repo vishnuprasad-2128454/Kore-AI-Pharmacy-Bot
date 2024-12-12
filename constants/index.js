@@ -9,9 +9,9 @@ module.exports = {
     verbiage_Fr_RespData: verbiage_Fr_RespData,
   },
   botConversationUniqId:{
-    orderIdResponse:"ESI_PHA_ORD_INFO_ORD_ID_RESP",
-    memberIdResponse:"ESI_PHA_ORD_INFO_MEMBER_ID_RESP",
-    invalidResponse:"ESI_PHA_ORD_INFO_INVALID_MSG"
+    ESI_PHA_ORD_INFO_ORD_ID_RESP:"ESI_PHA_ORD_INFO_ORD_ID_RESP",
+    ESI_PHA_ORD_INFO_MEMBER_ID_RESP:"ESI_PHA_ORD_INFO_MEMBER_ID_RESP",
+    ESI_PHA_ORD_INFO_INVALID_MSG:"ESI_PHA_ORD_INFO_INVALID_MSG"
   },
   requestHeaders: {
     "content-type":"application/json"
