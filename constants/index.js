@@ -13,6 +13,9 @@ module.exports = {
     memberIdResponse:"ESI_PHA_ORD_INFO_MEMBER_ID_RESP",
     invalidResponse:"ESI_PHA_ORD_INFO_INVALID_MSG"
   },
+  requestHeaders: {
+    "content-type":"application/json"
+  },
   serverResponses: {
     default: {
       status: 200,
