@@ -20,8 +20,6 @@ async function makeHttpCall(method, url, data = null, headers = {}) {
       data,
       headers,
     });
-    console.log("method",response)
-console.log("axios call",response)
     return response;
   } catch (error) {
     throw error;
