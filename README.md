@@ -18,6 +18,7 @@ project-root/
 ├── config/
 │   ├── config.json
 ├── .env
+│   ├── Dev,QA,Prod
 ├── app.js
 ├── README.md
 
