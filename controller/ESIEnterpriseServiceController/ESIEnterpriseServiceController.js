@@ -24,20 +24,20 @@ module.exports = {
     let response;
 
     try {
-      if (req.query.orderId && !req.query.memberId) {
+      if (req.body.orderId && !req.body.memberId) {
         response = Object.create(constants.serverResponses.success);
         response.body = await ESIEnterpriceService.getOrderDetails(
-          req.query.orderId
+          req.body.orderId
         );
-      } else if (req.query.memberId) {
+      } else if (req.body.memberId) {
         response = Object.create(constants.serverResponses.success);
         response.body = await ESIEnterpriceService.getMemberDetails(
-          req.query.memberId
+          req.body.memberId
         );
       }
     } catch (e) {
       logFn("error", __filename, `${MODULE_NAME} :: ${FUNC_NAME} :: `, e);
-      if (e?.statusCode === 404) {
+      if (e?.response?.statusCode === 404) {
         response = Object.create(constants.serverResponses.dataNotFound);
       } else {
         response = Object.create(constants.serverResponses.serverError);
