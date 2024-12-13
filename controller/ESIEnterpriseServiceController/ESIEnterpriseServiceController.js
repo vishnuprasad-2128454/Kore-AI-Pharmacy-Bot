@@ -22,17 +22,17 @@ module.exports = {
   async getIdDetails(req, res) {
     const FUNC_NAME = `getIdDetails`;
     let response;
-    let requestBody = JSON.parse(JSON.stringify(req.body));
+    console.log("req.body",req.body)
     try {
-      if (requestBody.orderId && !requestBody.memberId) {
+      if (req.body.orderId && !req.body.memberId) {
         response = Object.create(constants.serverResponses.success);
         response.body = await ESIEnterpriceService.getOrderDetails(
-          requestBody.orderId
+          req.body.orderId
         );
-      } else if (requestBody.memberId) {
+      } else if (req.body.memberId) {
         response = Object.create(constants.serverResponses.success);
         response.body = await ESIEnterpriceService.getMemberDetails(
-          requestBody.memberId
+          req.body.memberId
         );
       }
     } catch (e) {
