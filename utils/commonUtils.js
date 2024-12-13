@@ -1,6 +1,6 @@
-const { verbiageBuilder } = require("./verbiageBuilder");
-const constants = require("./constants/index");
-const richCardTemplate = require("./templates.json");
+const { verbiageBuilder } = require("../verbiageBuilder");
+const constants = require("../constants/botConstants");
+const richCardTemplate = require("../richCardTemplate.json");
 module.exports = {
   populateBotResponse: function (
     vbResponse,

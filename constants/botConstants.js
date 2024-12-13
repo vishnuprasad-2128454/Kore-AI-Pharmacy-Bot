@@ -76,4 +76,3 @@ module.exports = {
     DELETED: "Deleted Successfully",
   },
 };
-// Object.freeze(constants);

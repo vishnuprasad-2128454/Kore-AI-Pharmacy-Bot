@@ -9,7 +9,7 @@
 
 
 const MODULE_NAME = 'TicketingToolServiceController';
-const constants = require("../../constants/index");
+const constants = require("../../constants/botConstants");
 const dotenv = require("dotenv");
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 

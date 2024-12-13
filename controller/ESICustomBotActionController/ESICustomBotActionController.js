@@ -8,9 +8,9 @@
  */
 
 const MODULE_NAME = "ESICustomBotActionController";
-const constants = require("../../constants/index");
+const constants = require("../../constants/botConstants");
 const ESICustomBotActionService = require("../../service/ESICustomBotActionService");
-const { logFn } = require("../../winston_config");
+const { logFn } = require("../../winstonLogger");
 
 module.exports = {
   /**

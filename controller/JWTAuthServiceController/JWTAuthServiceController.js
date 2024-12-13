@@ -8,9 +8,9 @@
  */
 
 const MODULE_NAME = "JWTAuthServiceController";
-const constants = require("../../constants/index");
+const constants = require("../../constants/botConstants");
 const JWTAuthService = require("../../service/JWTAuthService");
-const { logFn } = require("../../winston_config");
+const { logFn } = require("../../winstonLogger");
 
 module.exports = {
   /**

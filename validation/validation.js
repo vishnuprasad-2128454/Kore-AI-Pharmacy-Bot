@@ -1,4 +1,4 @@
-const constants = require("../constants");
+const constants = require("../constants/botConstants");
 
 module.exports = {
   async validateAPIkey(req, res,next) {

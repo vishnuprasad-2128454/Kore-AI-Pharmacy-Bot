@@ -8,9 +8,9 @@
  */
 
 const MODULE_NAME = "ESIEnterpriseServiceController";
-const constants = require("../../constants/index");
+const constants = require("../../constants/botConstants");
 const ESIEnterpriceService = require("../../service/ESIEnterpriseService");
-const { logFn } = require("../../winston_config");
+const { logFn } = require("../../winstonLogger");
 
 module.exports = {
   /**

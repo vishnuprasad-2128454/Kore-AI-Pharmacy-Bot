@@ -1,9 +1,10 @@
-var botId = "st-ae29b86a-53b5-570a-93b9-7fdb0510f76d";
-var botName = "ordermanage";
+const config = require("./config.json");
+var botId = config.credentials.botId;
+var botName = config.credentials.botName;
 var sdk = require("./lib/sdk");
-const { populateBotResponse } = require("./commonUtils");
-const constants = require("./constants/index");
-const { logFn } = require("./winston_config");
+const { populateBotResponse } = require("./utils/commonUtils");
+const constants = require("./constants/botConstants");
+const { logFn } = require("./winstonLogger");
 /*
  * This is the most basic example of BotKit.
  *
@@ -50,13 +51,18 @@ module.exports = {
     try {
       const parsedMessage = JSON.parse(data.message);
       data.overrideMessagePayload = {
-          body: JSON.stringify(parsedMessage),
-          isTemplate: true,
+        body: JSON.stringify(parsedMessage),
+        isTemplate: true,
       };
-  } catch (e) {
-     delete data.overrideMessagePayload;
-  }
-  logFn("info", __filename, "overrideMessagePayload", data.overrideMessagePayload);
+    } catch (e) {
+      delete data.overrideMessagePayload;
+    }
+    logFn(
+      "info",
+      __filename,
+      "overrideMessagePayload",
+      data.overrideMessagePayload
+    );
 
     return sdk.sendUserMessage(data, callback);
   },

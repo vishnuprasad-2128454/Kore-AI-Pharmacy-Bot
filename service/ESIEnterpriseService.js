@@ -2,7 +2,7 @@ const axios = require("axios");
 const dotenv = require("dotenv");
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 const qs = require("qs");
-const { requestHeaders } = require("../constants");
+const { requestHeaders } = require("../constants/botConstants");
 const { makeHttpCall } = require("../makeHttpCall");
 
 module.exports = {
