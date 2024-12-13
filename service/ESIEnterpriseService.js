@@ -16,10 +16,10 @@ module.exports = {
     console.log("url",url)
     return makeHttpCall("get", url)
       .then(function (res) {
-        return resolve(res.data);
+        return res.data;
       })
       .catch(function (err) {
-        return reject(err);
+        return err;
       });
   },
 
@@ -33,10 +33,10 @@ module.exports = {
     const url = `${process.env.ESI_MEMBER_ID_RESPONSE_URL}=${memberId}`;
     return makeHttpCall("get", url)
       .then(function (res) {
-        return resolve(res.data);
+        return res.data;
       })
       .catch(function (err) {
-        return reject(err);
+        return err;
       });
   },
 };
