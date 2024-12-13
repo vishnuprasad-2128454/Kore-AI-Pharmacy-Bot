@@ -2,6 +2,7 @@ const constants = require("../constants");
 
 module.exports = {
   async validateAPIkey(req, res,next) {
+    console.log("reqv",req)
     const apiKey = req.headers["x-api-key"] || "";
     console.log("process.env.ESI_WRAPPER_SERVICE_API_KEY",process.env.ESI_WRAPPER_SERVICE_API_KEY)
     console.log("apikey",apiKey)
