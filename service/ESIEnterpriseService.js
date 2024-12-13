@@ -12,10 +12,14 @@ module.exports = {
    * @returns the id details.
    */
   async getOrderDetails(orderId) {
-    const response = await axios.get(
-      `${process.env.ESI_ORDER_ID_RESPONSE_URL}=${orderId}`
-    );
-    return response.data;
+    const url = `${process.env.ESI_ORDER_ID_RESPONSE_URL}=${orderId}`;
+    return makeHttpCall("get", url)
+      .then(function (res) {
+        return resolve(res.data);
+      })
+      .catch(function (err) {
+        return reject(err);
+      });
   },
 
   /**
@@ -25,9 +29,13 @@ module.exports = {
    */
 
   async getMemberDetails(memberId) {
-    const response = await axios.get(
-      `${process.env.ESI_MEMBER_ID_RESPONSE_URL}=${memberId}`
-    );
-    return response.data;
+    const url = `${process.env.ESI_MEMBER_ID_RESPONSE_URL}=${memberId}`;
+    return makeHttpCall("get", url)
+      .then(function (res) {
+        return resolve(res.data);
+      })
+      .catch(function (err) {
+        return reject(err);
+      });
   },
 };
