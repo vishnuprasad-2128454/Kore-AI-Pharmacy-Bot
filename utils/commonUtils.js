@@ -56,12 +56,7 @@ module.exports = {
       // Custom FAQ Responses
       return msgTemplate(result);
     }
-  },
-  resetExcelData: function () {
-    constants.verbiage_En_RespData = verbiageBuilder(
-      "ESI_PHA_BOT_RESP_BUILDER_EN_CA.xlsx"
-    );
-  },
+  }
 };
 function msgTemplate(templateData) {
   const templateType = templateData[0]?.MEDIA_TYPE;
