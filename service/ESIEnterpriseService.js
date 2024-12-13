@@ -13,7 +13,6 @@ module.exports = {
    */
   async getOrderDetails(orderId) {
     const url = `${process.env.ESI_ORDER_ID_RESPONSE_URL}=${orderId}`;
-    console.log("url",url)
     return makeHttpCall("get", url)
       .then(function (res) {
         return res.data;
