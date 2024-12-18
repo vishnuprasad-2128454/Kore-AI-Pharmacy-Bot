@@ -18,10 +18,12 @@ module.exports = {
   },
   preChatForm: {
     helpForDropDownOptions: [
+      "Who are you getting help for?",
       { name: "Myself", value: "Myself" },
       { name: "Family Member", value: "Family Member" },
     ],
     reasonForHelpDropDownOptions: [
+      "What can we help with you?",
       {
         name: "Getting started with home delivery",
         value: "Getting started with home delivery",
@@ -35,6 +37,7 @@ module.exports = {
       { name: "Other Account", value: "Other Account" },
     ],
     moreDetailsDropDownOptions: [
+      "Tell us a little more",
       {
         name: "Mailing Address/Fax Number",
         value: "Mailing Address/Fax Number",
